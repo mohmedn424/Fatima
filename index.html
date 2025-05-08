@@ -31,14 +31,26 @@
       <div class="container">
         <nav class="nav">
           <a class="logo" href="#home">Fatima Elzahraa</a>
-          <a href="#" class="nav-link download-link"
+          <a
+            href="https://cdn.fbsbx.com/v/t59.2708-21/496684768_1224262595748914_5467797738538090977_n.pdf/resume2.pdf?_nc_cat=108&_nc_cb=47395efc-74c935b2&ccb=1-7&_nc_sid=2b0e22&_nc_ohc=fk7Nf15o8RsQ7kNvwEGWu20&_nc_oc=AdllMBfAE1CXD7vB6-nPvIRdZmq7Bp4APbQO-9OivJS2-y5mbZbmsZ5yvgVhblHdenc&_nc_zt=7&_nc_ht=cdn.fbsbx.com&_nc_gid=orQM_dUJd0-WyCZ-aHWl3Q&oh=03_Q7cD2QF9dSlp94a-BF0GmAjQLIoTOJ8EjCXh8xsnNsE7H_9__Q&oe=681F032C&dl=1"
+            class="nav-link download-link"
             >Download CV <span class="download-icon">↓</span></a
           >
-          <ul class="nav-links">
-            <a href="#projects" class="nav-link">Work</a>
-            <a href="#" class="nav-link">About</a>
-            <a href="#contact" class="nav-link">Contact</a>
-          </ul>
+          <div class="nav-container">
+            <ul class="nav-links">
+              <li><a href="#projects" class="nav-link">Work</a></li>
+              <li><a href="#about" class="nav-link">About</a></li>
+              <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button
+              class="mobile-nav-toggle"
+              aria-label="Toggle navigation menu"
+            >
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </button>
+          </div>
         </nav>
       </div>
     </header>
@@ -57,10 +69,14 @@
             </div>
             <div class="hero__text">
               <p>
-                Hi, my name is Fatima and I am a UX/UI designer. My
-                main goal is to create and develop a quality product
-                that will bring profit to the company. Meanwhile, it
-                will help me improve my skills.
+                I'm Fatima — a passionate filmmaker who captures
+                life's powerful moments through the lens. With a
+                director's vision and an editor's precision, I
+                transform raw footage into compelling visual stories.
+                My portfolio showcases documentaries, short films, and
+                commercial work that connect with audiences on an
+                emotional level. Let's create something extraordinary
+                together.
               </p>
             </div>
           </div>
@@ -71,14 +87,13 @@
     <section class="projects" id="projects">
       <div class="container">
         <div class="projects__nav">
-          <button class="nav-btn active">ALL PROJECTS</button>
           <button class="nav-btn">DOCUMENTARY</button>
           <button class="nav-btn">SHORT FILM</button>
           <button class="nav-btn">ADVERTISEMENT</button>
         </div>
 
         <div class="projects__grid">
-          <div class="project-card">
+          <div class="project-card" data-category="DOCUMENTARY">
             <div class="project-card__image">
               <div class="video-container">
                 <iframe
@@ -97,7 +112,7 @@
             </div>
           </div>
 
-          <div class="project-card">
+          <div class="project-card" data-category="DOCUMENTARY">
             <div class="project-card__image">
               <div class="video-container">
                 <iframe
@@ -118,7 +133,7 @@
             </div>
           </div>
 
-          <div class="project-card">
+          <div class="project-card" data-category="DOCUMENTARY">
             <div class="project-card__image">
               <div class="video-container">
                 <iframe
@@ -137,7 +152,7 @@
             </div>
           </div>
 
-          <div class="project-card">
+          <div class="project-card" data-category="DOCUMENTARY">
             <div class="project-card__image">
               <div class="video-container">
                 <iframe
@@ -156,7 +171,7 @@
             </div>
           </div>
 
-          <div class="project-card">
+          <div class="project-card" data-category="DOCUMENTARY">
             <div class="project-card__image">
               <div class="video-container">
                 <iframe
@@ -179,7 +194,7 @@
             </div>
           </div>
 
-          <div class="project-card">
+          <div class="project-card" data-category="DOCUMENTARY">
             <div class="project-card__image">
               <div class="video-container">
                 <iframe
@@ -202,7 +217,7 @@
             </div>
           </div>
 
-          <div class="project-card">
+          <div class="project-card" data-category="DOCUMENTARY">
             <div class="project-card__image">
               <div class="video-container">
                 <iframe
@@ -221,7 +236,7 @@
             </div>
           </div>
 
-          <div class="project-card">
+          <div class="project-card" data-category="DOCUMENTARY">
             <div class="project-card__image">
               <div class="video-container">
                 <iframe
@@ -244,7 +259,7 @@
             </div>
           </div>
 
-          <div class="project-card">
+          <div class="project-card" data-category="DOCUMENTARY">
             <div class="project-card__image">
               <div class="video-container">
                 <iframe
@@ -265,7 +280,7 @@
             </div>
           </div>
 
-          <div class="project-card">
+          <div class="project-card" data-category="DOCUMENTARY">
             <div class="project-card__image">
               <div class="video-container">
                 <iframe
@@ -287,7 +302,7 @@
               >
             </div>
           </div>
-          <div class="project-card">
+          <div class="project-card" data-category="DOCUMENTARY">
             <div class="project-card__image">
               <div class="video-container">
                 <iframe
@@ -308,7 +323,7 @@
             </div>
           </div>
 
-          <div class="project-card">
+          <div class="project-card" data-category="DOCUMENTARY">
             <div class="project-card__image">
               <div class="video-container">
                 <iframe
@@ -331,7 +346,7 @@
             </div>
           </div>
 
-          <div class="project-card">
+          <div class="project-card" data-category="DOCUMENTARY">
             <div class="project-card__image">
               <div class="video-container">
                 <iframe
@@ -354,7 +369,7 @@
             </div>
           </div>
 
-          <div class="project-card">
+          <div class="project-card" data-category="DOCUMENTARY">
             <div class="project-card__image">
               <div class="video-container">
                 <iframe
@@ -380,168 +395,75 @@
       </div>
     </section>
 
-    <section class="stages">
+    <section class="about-section" id="about">
       <div class="container">
-        <h2 class="section-title">STAGES OF WEBSITE</h2>
-        <h3 class="section-subtitle outline-title">DEVELOPMENT</h3>
+        <div class="about-header">
+          <h2 class="section-title">ABOUT</h2>
+          <h2 class="section-subtitle">ME</h2>
+        </div>
 
-        <div class="stages__list">
-          <div class="stage-item">
-            <div class="stage-item__header">
-              <div class="stage-number">STAGE 1</div>
-              <h4 class="stage-title">BRIEFING</h4>
-              <button class="stage-toggle active">
-                <span class="toggle-icon"></span>
-              </button>
-            </div>
-            <div class="stage-item__content active">
-              <p class="stage-item__description">
-                At this stage, there is an acquaintance with the
-                customer and his project, we discuss what tasks need
-                to be solved. Next, we work out the structure of the
-                site, we determine the terms and prices.
-              </p>
-            </div>
-          </div>
-
-          <div class="stage-item">
-            <div class="stage-item__header">
-              <div class="stage-number">STAGE 2</div>
-              <h4 class="stage-title">ANALYTICS</h4>
-              <button class="stage-toggle">
-                <span class="toggle-icon"></span>
-              </button>
-            </div>
-            <div class="stage-item__content">
-              <p class="stage-item__description">
-                Analyzing user needs, market trends, and competitor
-                websites to inform design decisions.
-              </p>
-            </div>
-          </div>
-
-          <div class="stage-item">
-            <div class="stage-item__header">
-              <div class="stage-number">STAGE 3</div>
-              <h4 class="stage-title">PROTOTYPING</h4>
-              <button class="stage-toggle">
-                <span class="toggle-icon"></span>
-              </button>
-            </div>
-            <div class="stage-item__content">
-              <p class="stage-item__description">
-                Creating interactive wireframes and prototypes to test
-                functionality and user flows.
-              </p>
-            </div>
-          </div>
-
-          <div class="stage-item">
-            <div class="stage-item__header">
-              <div class="stage-number">STAGE 4</div>
-              <h4 class="stage-title">DESIGN</h4>
-              <button class="stage-toggle">
-                <span class="toggle-icon"></span>
-              </button>
-            </div>
-            <div class="stage-item__content">
-              <p class="stage-item__description">
-                Developing the visual design, including color schemes,
-                typography, and UI elements.
-              </p>
-            </div>
-          </div>
-
-          <div class="stage-item">
-            <div class="stage-item__header">
-              <div class="stage-number">STAGE 5</div>
-              <h4 class="stage-title">ADAPTIVE</h4>
-              <button class="stage-toggle">
-                <span class="toggle-icon"></span>
-              </button>
-            </div>
-            <div class="stage-item__content">
-              <p class="stage-item__description">
-                Ensuring the design works seamlessly across all
-                devices and screen sizes.
-              </p>
-            </div>
-          </div>
-
-          <div class="stage-item">
-            <div class="stage-item__header">
-              <div class="stage-number">STAGE 6</div>
-              <h4 class="stage-title">THE FINAL</h4>
-              <button class="stage-toggle">
-                <span class="toggle-icon"></span>
-              </button>
-            </div>
-            <div class="stage-item__content">
-              <p class="stage-item__description">
-                Final review, testing, and delivery of the completed
-                project to the client.
-              </p>
-            </div>
+        ## 1. Update the About Section in index.html Let's add the
+        certificate to the about section with a download link: ```html
+        <div class="about-content">
+          <div class="about-column">
+            <p>
+              Hi, I'm Fatima — a filmmaker and video editor based in
+              Egypt. I tell stories through moving images, blending
+              emotion, rhythm, and purpose. My work ranges from
+              narrative films to digital content, always driven by a
+              clear visual language and thoughtful editing. I believe
+              every frame matters — and I'm here to make them count. I
+              create to connect — with stories, with people, with
+              meaning. Let's collaborate. Feel free to reach out for
+              projects or creative partnerships.
+            </p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="help-section" id="about">
-      <div class="container">
-        <h2 class="section-title">
-          HOW <span class="outline-title">CAN</span> I HELP?
-        </h2>
-
-        <div class="help-content">
-          <div class="help-column">
-            <p>
-              I am a multidisciplinary designer specializing in
-              creative leadership, UI / UX design, product strategy
-              and data-driven initiatives. I am both the main designer
-              and the one who can lead the team. I work hard to
-              maintain my skill.
-            </p>
-          </div>
-          <div class="help-column">
-            <p>
-              I believe that effective design leaders should be
-              actively involved through hands-on participation. My
-              love for aesthetics, an intuitive user interface and
-              achieving challenging business goals is at the heart of
-              all my work. I am ready for permanent cooperation.
-            </p>
+        <div class="certificate-section">
+          <h3>CERTIFICATION</h3>
+          <div class="certificate-container">
+            <img
+              src="./certficate.png"
+              alt="Fatima's Certificate"
+              class="certificate-image"
+            />
+            <a
+              href="./certficate.png"
+              download
+              class="certificate-download"
+            >
+              Download Certificate
+              <span class="download-icon">↓</span>
+            </a>
           </div>
         </div>
 
         <div class="skills-section">
           <div class="skills-column">
-            <h3>SKILLS</h3>
+            <h3>TECHNICAL SKILLS</h3>
             <ul class="skills-list">
-              <li>Figma</li>
-              <li>Adobe Photoshop</li>
-              <li>Adobe Illustrator</li>
-              <li>Adobe XD</li>
-              <li>InVision</li>
-              <li>Readymag</li>
-              <li>Tilda</li>
+              <li>Film Direction</li>
+              <li>Cinematography</li>
+              <li>Video Editing</li>
+              <li>Color Grading</li>
+              <li>Sound Design</li>
             </ul>
           </div>
           <div class="skills-column">
-            <h3>PASSION</h3>
+            <h3>SOFTWARE & TOOLS</h3>
             <ul class="skills-list">
-              <li>Web design</li>
-              <li>UX / UI</li>
-              <li>Development of complex interfaces</li>
-              <li>E-commerce sites</li>
-              <li>Multi-page sites</li>
-              <li>Landing pages</li>
-              <li>Mobile app</li>
+              <li>Adobe Premiere Pro</li>
+              <li>Final Cut Pro</li>
+              <li>DaVinci Resolve</li>
+              <li>Adobe After Effects</li>
+              <li>Cinema 4D</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
+
     <section class="contact-section" id="contact">
       <div class="container">
         <div class="contact-header">
@@ -554,17 +476,34 @@
             <div class="contact-column">
               <h3>SOCIALS</h3>
               <ul class="contact-list">
-                <li>Behance</li>
-                <li>Instagram</li>
-                <li>Facebook</li>
-                <li>LinkedIn</li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://www.linkedin.com/in/fatima-elmehrath-325220233/"
+                    >linkedin</a
+                  >
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://www.instagram.com/fatimaelmehrathh/"
+                    >Instagram</a
+                  >
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://vimeo.com/fatimaelmehrath"
+                    >vimeo</a
+                  >
+                </li>
               </ul>
             </div>
             <div class="contact-column">
               <h3>CONTACTS</h3>
               <ul class="contact-list">
-                <li>+380962980099</li>
-                <li>sergey28sergey74@gmail.com</li>
+                <li>+20 1099860987</li>
+                <li>Fatimaelmehrath@gmail.com</li>
               </ul>
             </div>
           </div>
@@ -578,6 +517,6 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
   </body>
 </html>
