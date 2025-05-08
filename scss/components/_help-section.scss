@@ -1,0 +1,52 @@
+.help-section {
+  padding: 8rem 0;
+  background-color: $color-light;
+}
+
+.help-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+
+  @include responsive(mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.help-column {
+  p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+}
+
+.skills-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid rgba($color-dark, 0.1);
+  padding-top: 2rem;
+
+  @include responsive(mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skills-column {
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: $color-gray;
+  }
+}
+
+.skills-list {
+  li {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+}

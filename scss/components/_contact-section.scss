@@ -1,0 +1,75 @@
+.contact-section {
+  padding: 8rem 0;
+  background-color: $color-light;
+}
+
+.contact-header {
+  text-align: left;
+  margin-bottom: 4rem;
+
+  .contact-title {
+    font-size: 8rem;
+    font-weight: 800;
+    line-height: 0.8;
+    margin-bottom: 0;
+    text-align: left;
+
+    @include responsive(tablet) {
+      font-size: 6rem;
+    }
+
+    @include responsive(mobile) {
+      font-size: 4rem;
+    }
+  }
+
+  .contact-subtitle {
+    font-size: 10rem;
+    font-weight: 800;
+    line-height: 0.8;
+    margin-bottom: 0;
+    text-align: left;
+    @include outline-text;
+
+    @include responsive(tablet) {
+      font-size: 6rem;
+    }
+
+    @include responsive(mobile) {
+      font-size: 4rem;
+    }
+  }
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+
+  @include responsive(mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-column {
+  border-top: 1px solid $color-dark;
+  padding-top: 1em;
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.contact-list {
+  li {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+}
