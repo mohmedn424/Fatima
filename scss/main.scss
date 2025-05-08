@@ -1,0 +1,20 @@
+// Import utils
+@import 'utils/variables';
+@import 'utils/mixins';
+
+// Import base styles
+@import 'base/reset';
+@import 'base/typography';
+
+// Import layout
+@import 'layout/header';
+@import 'layout/hero';
+@import 'layout/projects';
+@import 'layout/stages';
+@import 'layout/footer';
+
+// Import components
+@import 'components/buttons';
+@import 'components/project-card';
+@import 'components/video-modal';
+@import 'components/stage-item';

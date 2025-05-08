@@ -1,0 +1,122 @@
+.hero {
+  height: 85dvh;
+  margin-top: 0;
+  margin-top: 100px;
+  position: relative;
+}
+
+.hero__content {
+  @include flex(column, center, flex-start);
+  gap: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero__title {
+  @include flex(column, flex-start, flex-start);
+  line-height: 0.9;
+  margin-bottom: $spacing-lg;
+
+  .subtitle {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: $color-dark;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+
+    &::after {
+      content: '/';
+      color: transparent;
+      -webkit-text-stroke: 1px $color-dark;
+      margin: 0 0.2rem;
+    }
+
+    &::before {
+      content: 'Film editor';
+      margin-right: 0.2rem;
+    }
+  }
+
+  .title {
+    font-size: 8rem;
+    font-weight: 800;
+    color: $color-dark;
+    line-height: 0.9;
+    margin-bottom: 0;
+
+    @include responsive(tablet) {
+      font-size: 6rem;
+    }
+
+    @include responsive(mobile) {
+      font-size: 4rem;
+    }
+  }
+
+  .outline-title {
+    @include outline-text;
+    font-size: 8rem;
+    font-weight: 800;
+    line-height: 0.9;
+
+    @include responsive(tablet) {
+      font-size: 6rem;
+    }
+
+    @include responsive(mobile) {
+      font-size: 4rem;
+    }
+  }
+}
+
+.hero__info {
+  @include grid(2, $spacing-lg);
+  gap: 0;
+
+  @include responsive(tablet) {
+    @include grid(1, $spacing-md);
+  }
+}
+
+.hero__image {
+  position: relative;
+
+  img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 50%;
+    filter: grayscale(100%);
+  }
+
+  .circular-text {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    width: 100px;
+    height: 100px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+    }
+
+    text {
+      font-size: 8px;
+      fill: $color-accent;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.hero__text {
+  @include flex(column, center, flex-start);
+  padding: 20px 0;
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+}

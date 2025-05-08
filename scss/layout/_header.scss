@@ -1,0 +1,47 @@
+.header {
+  padding: $spacing-sm 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: rgba($color-light, 0.95);
+}
+
+.nav {
+  @include flex(row, space-between, center);
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.nav-links {
+  @include flex(row, flex-end, center);
+  flex-direction: column;
+  align-items: flex-end;
+
+  @include responsive(tablet) {
+    display: none;
+  }
+}
+
+.nav-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $color-gray;
+  }
+}
+
+.download-link {
+  @include flex(row, center, center);
+  gap: 0.3rem;
+}
+
+.download-icon {
+  font-size: 0.8rem;
+}

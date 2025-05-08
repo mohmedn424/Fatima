@@ -1,0 +1,103 @@
+.stage-item {
+  border-bottom: 1px solid rgba($color-dark, 0.1);
+
+  &:first-child {
+    border-top: 1px solid rgba($color-dark, 0.1);
+  }
+}
+
+.stage-item__header {
+  @include flex(row, space-between, center);
+  padding: $spacing-md 0;
+  cursor: pointer;
+}
+
+.stage-number {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: $color-gray;
+  width: 80px;
+  text-transform: uppercase;
+}
+
+.stage-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  flex-grow: 1;
+
+  @include responsive(mobile) {
+    font-size: 1.2rem;
+  }
+}
+
+.stage-toggle {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  .toggle-icon {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: $color-dark;
+      transition: transform 0.3s ease;
+    }
+
+    &::before {
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 100%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &.active .toggle-icon::after {
+    transform: translateX(-50%) rotate(90deg);
+  }
+}
+
+.stage-item__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 0 0 80px;
+
+  &.active {
+    max-height: 200px;
+    padding: 0 0 $spacing-md 80px;
+  }
+
+  @include responsive(mobile) {
+    padding: 0 0 0 0;
+
+    &.active {
+      padding: 0 0 $spacing-md 0;
+    }
+  }
+}
+
+.stage-item__description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: $color-gray;
+  margin: 0;
+}

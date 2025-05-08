@@ -1,0 +1,27 @@
+.projects {
+  padding: $spacing-md 0;
+}
+
+.projects__nav {
+  @include flex(row, center, center, wrap);
+  gap: $spacing-md;
+  margin-bottom: $spacing-lg;
+
+  @include responsive(mobile) {
+    gap: $spacing-sm;
+    margin-bottom: $spacing-md;
+  }
+}
+
+.projects__grid {
+  @include grid(2, 0);
+  border: 1px solid $color-dark;
+
+  @include responsive(tablet) {
+    @include grid(2, 0);
+  }
+
+  @include responsive(mobile) {
+    @include grid(1, 0);
+  }
+}
