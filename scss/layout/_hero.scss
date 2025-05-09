@@ -95,20 +95,37 @@
   perspective: 1000px;
   z-index: 2;
   overflow: visible;
+
   img {
     width: 400px;
     height: 400px;
     object-fit: cover;
     border-radius: 50%;
     filter: grayscale(100%);
-    transition: filter 0.5s ease, transform 0.5s ease,
-      box-shadow 0.5s ease;
+    // Use will-change to optimize performance
+    will-change: transform, filter;
+    // Optimize transitions for better performance
+    transition: filter 0.3s ease, transform 0.3s ease,
+      box-shadow 0.3s ease;
     transform-style: preserve-3d;
     transform-origin: center center;
+
     &:hover {
       filter: grayscale(0%);
+      // Reduce scale and rotation for better performance
       transform: scale(1.5) rotate(10deg);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    // Add specific mobile optimizations
+    @media (max-width: 768px) {
+      transition: filter 0.25s ease, transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+      &:hover {
+        // Even more subtle effect on mobile
+        transform: scale(1.5) rotate(10deg);
+      }
     }
   }
 }
