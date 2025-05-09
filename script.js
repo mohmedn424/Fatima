@@ -4,13 +4,16 @@ document.addEventListener('DOMContentLoaded', function () {
   initNavigation();
 
   // ===== Project Filtering =====
-  initProjectFiltering();
+  // initProjectFiltering(); // Remove this duplicate function call
 
   // ===== Video Modal =====
   initVideoModal();
 
   // ===== Stages Accordion =====
   initStagesAccordion();
+
+  // Only use this filtering function
+  handleCategoryFiltering();
 });
 
 // Navigation functionality
@@ -235,4 +238,181 @@ function initStagesAccordion() {
         stageContents[index].classList.toggle('active');
     });
   });
+}
+
+// Function to handle category filtering
+function handleCategoryFiltering() {
+  const navButtons = document.querySelectorAll('.nav-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+  const projectsGrid = document.querySelector('.projects__grid');
+
+  // Set initial state - hide all projects
+  if (projectsGrid) {
+    projectsGrid.style.display = 'none';
+    // Add a transition to the grid itself
+    projectsGrid.style.transition = 'opacity 0.3s ease';
+  }
+
+  // Set up project cards with correct categories
+  projectCards.forEach((card) => {
+    const categoryText = card
+      .querySelector('.project-card__category')
+      ?.textContent.trim();
+    if (categoryText) {
+      card.setAttribute('data-category', categoryText);
+    }
+
+    // Create a wrapper for the content to animate separately from borders
+    const cardContent = document.createElement('div');
+    cardContent.className = 'card-content-wrapper';
+
+    // Move all child elements into the wrapper
+    while (card.firstChild) {
+      cardContent.appendChild(card.firstChild);
+    }
+
+    // Add the wrapper back to the card
+    card.appendChild(cardContent);
+
+    // Style the wrapper
+    cardContent.style.height = '100%';
+    cardContent.style.width = '100%';
+    cardContent.style.position = 'relative';
+
+    // Initialize all cards with GSAP
+    gsap.set(cardContent, {
+      opacity: 0,
+      scale: 0.98,
+      y: 10,
+    });
+
+    // Hide the card initially
+    card.style.display = 'none';
+  });
+
+  navButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      // Get the selected category
+      const category = button.textContent.trim();
+
+      // Check if this button is already active
+      const wasActive = button.classList.contains('active');
+
+      // Toggle active class on buttons
+      navButtons.forEach((btn) => btn.classList.remove('active'));
+
+      // If the button was already active, hide the entire grid and exit
+      if (wasActive) {
+        // Fade out the grid container instead of animating individual cards
+        gsap.to(projectsGrid, {
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power2.inOut',
+          onComplete: () => {
+            projectsGrid.style.display = 'none';
+          },
+        });
+        return;
+      }
+
+      // Otherwise, show the grid and mark this button as active
+      button.classList.add('active');
+
+      // Show grid with initial opacity 0
+      projectsGrid.style.opacity = '0';
+      projectsGrid.style.display = 'grid';
+
+      // Fade in the grid container
+      gsap.to(projectsGrid, {
+        opacity: 1,
+        duration: 0.8,
+        ease: 'power2.out',
+      });
+
+      // Filter projects
+      let visibleCount = 0;
+      const visibleCards = [];
+      const visibleContents = [];
+      const hiddenCards = [];
+
+      // First, categorize cards and set up borders properly
+      projectCards.forEach((card) => {
+        const cardCategory = card
+          .querySelector('.project-card__category')
+          .textContent.trim();
+
+        const cardContent = card.querySelector(
+          '.card-content-wrapper'
+        );
+
+        if (cardCategory === category) {
+          visibleCards.push(card);
+          visibleContents.push(cardContent);
+          visibleCount++;
+
+          // Show the card immediately to establish grid layout
+          card.style.display = 'block';
+
+          // Reset all borders
+          card.style.borderRight = '1px solid #1a1a1a';
+          card.style.borderBottom = '1px solid #1a1a1a';
+        } else {
+          hiddenCards.push(card);
+          card.style.display = 'none';
+        }
+      });
+
+      // Fix borders immediately after categorizing
+      visibleCards.forEach((card, index) => {
+        // Remove right border for every even card
+        if ((index + 1) % 2 === 0) {
+          card.style.borderRight = 'none';
+        }
+
+        // Remove bottom border for last row
+        const isLastRow =
+          Math.ceil(visibleCount / 2) === Math.ceil((index + 1) / 2);
+        if (isLastRow) {
+          card.style.borderBottom = 'none';
+        }
+
+        // Mobile view adjustments
+        if (window.innerWidth <= 576) {
+          card.style.borderRight = 'none';
+          card.style.borderBottom = '1px solid #1a1a1a';
+
+          // Last card has no bottom border
+          if (index === visibleCards.length - 1) {
+            card.style.borderBottom = 'none';
+          }
+        }
+      });
+
+      // Animate in the card contents with staggered timing
+      gsap.fromTo(
+        visibleContents,
+        {
+          opacity: 0,
+          y: 10,
+          scale: 0.98,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          stagger: 0.05,
+          ease: 'power3.out',
+          clearProps: 'transform',
+        }
+      );
+    });
+  });
+
+  // Trigger click on first button to show initial category
+  if (navButtons.length > 0) {
+    setTimeout(() => {
+      navButtons[0].click();
+    }, 100);
+  }
 }

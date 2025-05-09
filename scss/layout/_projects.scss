@@ -9,13 +9,51 @@
 
   @include responsive(mobile) {
     gap: $spacing-sm;
-    margin-bottom: $spacing-md;
   }
 }
 
 .projects__grid {
   @include grid(2, 0);
   border: 1px solid $color-dark;
+  display: grid;
+
+  // Ensure every cell has consistent borders
+  & > .project-card {
+    border-right: 1px solid $color-dark;
+    border-bottom: 1px solid $color-dark;
+
+    // Remove right border from every even child
+    &:nth-child(2n) {
+      border-right: none;
+    }
+
+    // Handle the bottom row
+    &:nth-last-child(1),
+    &:nth-last-child(2) {
+      border-bottom: none;
+    }
+
+    // Responsive adjustments
+    @include responsive(tablet) {
+      &:nth-child(2n) {
+        border-right: none;
+      }
+
+      &:nth-last-child(1),
+      &:nth-last-child(2) {
+        border-bottom: none;
+      }
+    }
+
+    @include responsive(mobile) {
+      border-right: none;
+      border-bottom: 1px solid $color-dark;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
 
   @include responsive(tablet) {
     @include grid(2, 0);

@@ -70,6 +70,7 @@ h6 {
 }
 
 .section-title {
+  padding-top: 100px;
   font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: 0;
@@ -419,7 +420,6 @@ h6 {
 @media (max-width: 576px) {
   .projects__nav {
     gap: 1rem;
-    margin-bottom: 2rem;
   }
 }
 
@@ -428,6 +428,36 @@ h6 {
   grid-template-columns: repeat(2, 1fr);
   gap: 0;
   border: 1px solid #1a1a1a;
+  display: grid;
+}
+.projects__grid > .project-card {
+  border-right: 1px solid #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
+}
+.projects__grid > .project-card:nth-child(2n) {
+  border-right: none;
+}
+.projects__grid > .project-card:nth-last-child(1),
+.projects__grid > .project-card:nth-last-child(2) {
+  border-bottom: none;
+}
+@media (max-width: 768px) {
+  .projects__grid > .project-card:nth-child(2n) {
+    border-right: none;
+  }
+  .projects__grid > .project-card:nth-last-child(1),
+  .projects__grid > .project-card:nth-last-child(2) {
+    border-bottom: none;
+  }
+}
+@media (max-width: 576px) {
+  .projects__grid > .project-card {
+    border-right: none;
+    border-bottom: 1px solid #1a1a1a;
+  }
+  .projects__grid > .project-card:last-child {
+    border-bottom: none;
+  }
 }
 @media (max-width: 768px) {
   .projects__grid {
@@ -882,67 +912,4 @@ h6 {
 .contact-list li {
   font-size: 1rem;
   margin-bottom: 0.5rem;
-}
-
-/* Certificate styles */
-.certificate-section {
-  margin-top: 3rem;
-  border-top: 1px solid rgba(26, 26, 26, 0.1);
-  padding-top: 2rem;
-}
-
-.certificate-section h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  color: #666;
-}
-
-.certificate-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.certificate-image {
-  max-width: 100%;
-  height: auto;
-  max-height: 400px;
-  object-fit: contain;
-  border: 1px solid rgba(26, 26, 26, 0.1);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.certificate-image:hover {
-  transform: scale(1.02);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-.certificate-download {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  padding: 0.5rem 1rem;
-  background-color: #1a1a1a;
-  color: #fff;
-  border-radius: 5px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.certificate-download:hover {
-  background-color: #333;
-}
-
-@media (max-width: 768px) {
-  .certificate-image {
-    max-height: 300px;
-  }
-}
-
-/*# sourceMappingURL=main.css.map */
+} /*# sourceMappingURL=main.css.map */
